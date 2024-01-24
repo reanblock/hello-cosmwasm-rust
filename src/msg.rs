@@ -13,17 +13,19 @@ pub enum QueryMsg {
 }
 
 #[derive(Serialize, Deserialize, PartialEq, Debug, Clone)]
-pub struct InstantiateMsg {
-    pub admins: Vec<String>,
+pub struct AdminsListResp  {
+    pub admins: Vec<Addr>,
 }
 
 #[derive(Serialize, Deserialize, PartialEq, Debug, Clone)]
-pub struct AdminsListResp  {
-    pub admins: Vec<Addr>,
+pub struct InstantiateMsg {
+    pub admins: Vec<String>,
+    pub donation_denom: String,
 }
 
 #[derive(Serialize, Deserialize, PartialEq, Debug, Clone)]
 pub enum ExecuteMsg {
     AddMembers { admins: Vec<String> },
     Leave {},
+    Donate {},
 }
