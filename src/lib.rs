@@ -4,10 +4,10 @@ use cosmwasm_std::{
 use msg::{ExecuteMsg, InstantiateMsg, QueryMsg};
 use error::ContractError;
 
-mod contract;
-mod error;
-mod msg;
-mod state;
+pub mod contract;
+pub mod error;
+pub mod msg;
+pub mod state;
 
 #[entry_point]
 pub fn instantiate(deps: DepsMut, env: Env, info: MessageInfo, msg: InstantiateMsg)
